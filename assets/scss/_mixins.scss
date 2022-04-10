@@ -1,0 +1,29 @@
+@use "./colors" as *;
+
+%btn {
+	padding: 0.8rem 1rem;
+	border-radius: 5px;
+	border: 2px solid transparent;
+	box-shadow: 2px 4px 12px -2px rgb(192, 192, 196);
+}
+
+@mixin dark-btn {
+	@extend %btn;
+	background: $primary;
+	color: white;
+	border-color: $primary;
+
+	&:hover {
+		background: white;
+		color: $primary;
+	}
+}
+@mixin light-btn {
+	@extend %btn;
+	background: white;
+	color: $dark;
+
+	&:hover {
+		border: 2px solid $dark;
+	}
+}

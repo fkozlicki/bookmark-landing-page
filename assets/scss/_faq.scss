@@ -1,0 +1,72 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+
+.faq {
+	&__title {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	&__subtitle {
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	&__accordion {
+		max-width: 600px;
+		margin: auto;
+		margin-bottom: 3rem;
+	}
+
+	&__accordion-header {
+		display: flex;
+		padding: 1.5rem 0;
+		border-bottom: 1px solid lighten($light, 20%);
+		cursor: pointer;
+
+		&:hover {
+			h1 {
+				color: $secondary;
+			}
+
+			img {
+				filter: hue-rotate(120deg);
+			}
+		}
+	}
+
+	&__accordion-btn {
+		transform-origin: center center;
+		transition: all 300ms ease-in-out;
+
+		&--active {
+			transform: rotate(180deg);
+
+			* {
+				filter: hue-rotate(120deg);
+			}
+		}
+	}
+
+	&__accordion-content {
+		height: 0;
+		overflow: hidden;
+		padding: 0;
+		border: none;
+		transition: all 300ms linear;
+
+		&--active {
+			height: 230px;
+			padding: 1.5rem 0;
+			border-bottom: 1px solid lighten($light, 20%);
+		}
+	}
+	&__accordion-question {
+		margin-right: auto;
+	}
+
+	&__btn {
+		@include dark-btn;
+		display: block;
+		margin: auto;
+	}
+}

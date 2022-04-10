@@ -1,0 +1,64 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+
+.features {
+	text-align: center;
+
+	&__title {
+		margin-bottom: 1rem;
+	}
+	&__subtitle {
+		margin-bottom: 2rem;
+	}
+
+	&__content-title {
+		margin-bottom: 1rem;
+	}
+	&__content-description {
+		margin-bottom: 2rem;
+	}
+
+	&__menu {
+		display: flex;
+		flex-wrap: wrap;
+
+		max-width: 700px;
+		margin: auto;
+		margin-bottom: 5rem;
+	}
+
+	&__menu-item {
+		flex: 1 1 100%;
+
+		position: relative;
+		padding: 1rem 0;
+		border-bottom: 1px solid lighten($light, 25%);
+		cursor: pointer;
+
+		&:first-child {
+			border-top: 1px solid lighten($light, 25%);
+		}
+
+		&--active {
+			&::before {
+				content: "";
+				height: 4px;
+				width: 40%;
+				background: $secondary;
+				position: absolute;
+				left: 50%;
+				bottom: 0px;
+				transform: translateX(-50%);
+			}
+		}
+	}
+
+	&__image-box {
+		margin-bottom: 3rem;
+	}
+
+	&__btn {
+		display: none;
+		@include dark-btn;
+	}
+}

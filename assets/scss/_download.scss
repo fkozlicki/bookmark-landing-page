@@ -1,0 +1,60 @@
+@use "./mixins" as *;
+
+.download {
+	text-align: center;
+
+	&__title {
+		margin-bottom: 1rem;
+	}
+
+	&__subtitle {
+		margin-bottom: 2rem;
+	}
+
+	&__browsers {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: start;
+		gap: 2.5rem;
+	}
+
+	&__browser-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-radius: 10px;
+		width: 280px;
+
+		box-shadow: 2px 2px 21px rgba(0, 0, 0, 0.2);
+	}
+
+	&__browser-image {
+		width: 50%;
+		margin-bottom: 1.5rem;
+	}
+
+	&__browser-title {
+		margin-bottom: 0.5rem;
+	}
+	&__browser-subtitle {
+		margin-bottom: 3rem;
+	}
+
+	&__browser-content {
+		width: 100%;
+		padding: 1.5rem 1.5rem 0 1.5rem;
+		background-image: url("../../images/bg-dots.svg");
+		background-repeat: repeat-x;
+		background-position: bottom;
+	}
+
+	&__browser-btn-wrapper {
+		width: 100%;
+		padding: 1.5rem;
+	}
+
+	&__browser-btn {
+		@include dark-btn;
+	}
+}

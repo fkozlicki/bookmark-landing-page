@@ -1,0 +1,82 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+
+.newsletter {
+	padding: 4rem 0;
+	background: $primary;
+	text-align: center;
+
+	&__title {
+		margin-bottom: 3rem;
+	}
+	&__subtitle {
+		max-width: 450px;
+		margin: auto;
+		margin-bottom: 2rem;
+	}
+
+	&__form {
+		max-width: 470px;
+		margin: auto;
+
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	&__email-box {
+		flex: 1 1 100%;
+
+		position: relative;
+		border: 2px solid transparent;
+		border-radius: 5px;
+		overflow: hidden;
+
+		&--error {
+			border-color: $secondary;
+		}
+	}
+
+	&__btn {
+		flex: 1 1 100%;
+
+		@include dark-btn;
+		background: $secondary;
+		border-color: $secondary;
+		box-shadow: none;
+
+		&:hover {
+			color: $secondary;
+		}
+	}
+
+	&__image-box {
+		display: none;
+		position: absolute;
+		top: 0.8rem;
+		right: 0.5rem;
+
+		&--active {
+			display: block;
+		}
+	}
+
+	&__email {
+		position: relative;
+		width: 100%;
+		padding: 0.8rem 2rem 0.8rem 0.5rem;
+	}
+
+	&__error-message {
+		text-align: left;
+		display: none;
+		width: 100%;
+		padding: 0.4rem 0.5rem;
+		background: $secondary;
+
+		&--active {
+			display: block;
+		}
+	}
+}

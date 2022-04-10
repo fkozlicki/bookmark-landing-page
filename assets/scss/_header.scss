@@ -1,0 +1,38 @@
+@use "./mixins" as *;
+
+.header {
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__title {
+		margin-bottom: 1rem;
+	}
+
+	&__subtitle {
+		margin-bottom: 2rem;
+	}
+
+	&__image-box {
+		flex: 1 1 100%;
+	}
+	&__text-box {
+		flex: 1 1 100%;
+
+		text-align: center;
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	&__chrome-btn {
+		@include dark-btn;
+	}
+	&__firefox-btn {
+		@include light-btn;
+	}
+}

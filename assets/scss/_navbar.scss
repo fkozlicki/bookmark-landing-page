@@ -1,0 +1,107 @@
+@use "./colors" as *;
+
+.navbar {
+	padding: 1.5rem 0;
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&--active {
+			visibility: hidden;
+		}
+	}
+
+	&__menu {
+		display: none;
+		gap: 3rem;
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 3rem;
+	}
+
+	&__login-btn {
+		padding: 0.55rem 2rem;
+		border-radius: 5px;
+		border: 2px solid $secondary;
+		text-transform: uppercase;
+		font-size: 0.85rem;
+		font-weight: 500;
+		letter-spacing: 1px;
+		background: $secondary;
+		color: white;
+
+		&:hover {
+			background: white;
+			color: $secondary;
+		}
+	}
+
+	// MOBILE MENU
+	&__mobile-menu {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		padding: 0 2rem;
+		width: 100%;
+		height: 100vh;
+		background: transparentize($dark, $amount: 0.1);
+
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		z-index: 200;
+
+		transition: top 300ms linear;
+
+		&--active {
+			top: 0;
+		}
+	}
+
+	&__mobile-header {
+		display: flex;
+		justify-content: space-between;
+
+		padding: 2rem 0;
+	}
+
+	&__mobile-content {
+		text-align: center;
+	}
+
+	&__mobile-list-item {
+		padding: 1.5rem 0;
+		border-bottom: 1px solid $light;
+
+		&:first-child {
+			border-top: 1px solid $light;
+		}
+	}
+
+	&__mobile-login-btn {
+		margin-top: 2rem;
+		width: 100%;
+		padding: 0.5rem 0;
+		border: 2px solid white;
+		border-radius: 5px;
+
+		&:hover {
+			background: white;
+		}
+	}
+
+	&__mobile-socials {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+
+		padding: 1.5rem 0;
+		margin-top: auto;
+	}
+}

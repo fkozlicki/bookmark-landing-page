@@ -1,0 +1,111 @@
+@use "./colors" as *;
+
+@media screen and (min-width: 764px) {
+	.header {
+		&__content {
+			align-items: center;
+			gap: 4rem;
+		}
+
+		&__image-box {
+			order: 1;
+			flex: 1 1 40%;
+		}
+		&__text-box {
+			flex: 1 1 40%;
+
+			text-align: left;
+		}
+
+		&__buttons {
+			justify-content: start;
+		}
+	}
+
+	.features {
+		&__dynamic-content {
+			display: flex;
+			align-items: center;
+			gap: 6rem;
+		}
+
+		&__image-box,
+		&__content-box {
+			flex: 1 1 50%;
+		}
+
+		&__content-box {
+			text-align: left;
+		}
+
+		&__btn {
+			display: block;
+		}
+
+		&__menu {
+			border-bottom: 1px solid lighten($light, 25%);
+		}
+
+		&__menu-item {
+			flex: 33.3%;
+			border: none !important;
+
+			&--active {
+				&::before {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.navbar {
+		&__menu-btn {
+			display: none;
+		}
+		&__menu {
+			display: flex;
+		}
+		&__mobile-menu {
+			display: none;
+		}
+		&__content {
+			visibility: visible;
+		}
+	}
+
+	.download {
+		&__browser-card {
+			&:nth-child(2) {
+				margin-top: 3rem;
+			}
+			&:nth-child(3) {
+				margin-top: 6rem;
+			}
+		}
+	}
+
+	.newsletter {
+		&__email-box {
+			flex: 1 1 70%;
+		}
+		&__btn {
+			flex: 1 1 25%;
+		}
+	}
+
+	.footer {
+		&__wrapper {
+			flex-direction: row;
+			align-items: center;
+			gap: 3rem;
+		}
+
+		&__list {
+			flex-direction: row;
+
+			margin-right: auto;
+		}
+	}
+}
